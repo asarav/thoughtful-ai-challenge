@@ -2,20 +2,20 @@
 Script or sorting packages in Thoughtful’s warehouse. Complete with unit tests
 
 Rules:
-- A package is BULKY if its volume hits 1,000,000 cm³ or any one side is 150 cm or more.
+- A package is BULKY if its volume hits 1,000,000 cm^3 or any one side is 150 cm or more.
 - A package is HEAVY if it tips the scale at 20 kg or more.
 
 Stacks:
-  STANDARD  → neither bulky nor heavy
-  SPECIAL   → either bulky or heavy (but not both)
-  REJECTED  → both bulky and heavy
+  STANDARD -> neither bulky nor heavy
+  SPECIAL -> either bulky or heavy (but not both)
+  REJECTED -> both bulky and heavy
 """
 
-def is_bulky(w, h, l):
+def is_bulky(width, height, length):
     # Bulky if any side is huge, or if the whole thing’s volume breaks a million.
     return (
-        w >= 150 or h >= 150 or l >= 150 or
-        w * h * l >= 1_000_000
+        width >= 150 or height >= 150 or length >= 150 or
+        width * height * length >= 1000000
     )
 
 
